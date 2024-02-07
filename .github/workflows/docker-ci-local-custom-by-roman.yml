@@ -30,7 +30,7 @@ env:
   # DATE: $(date +%s)
   DATE: $(date -u +"%F-%H%M%S")
   # IMAGE_TAG: ${INPUT_TAG:-"latest"}
-  IMAGE_TAG: ${INPUT_TAG:-DATE}
+  IMAGE_TAG: ${INPUT_TAG:-$DATE}
   # IMAGE_TAG: ${INPUT_TAG:-$(date -u +"%F-%H%M%S")}
   DOCKERFILE: Dockerfile
   
