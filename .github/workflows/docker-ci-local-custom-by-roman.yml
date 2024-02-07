@@ -9,10 +9,9 @@ on:
       tag:
         description: "Docker image TAG"
         # required: true
-        required: false
         type: string
         # default: $(date +%s)
-        default: 'latest'
+        # default: 'latest'
 
 #   push:
 #     branches: [ "main" ]
