@@ -30,3 +30,40 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ inputs.name }}"
+
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Show working directory
+      run: pwd && ls -la
+      
+    - name: Show all Git branches
+      run: git branch -a
+
+    - name: Show Git status
+      run: git status
+
+    - name: Show Git log -3
+      run: git log -3
+      
+    - name: Docker image list
+      run: docker image ls
+
+    - name: Docker container list
+      run: docker container ls -a
+      
+    # - name: Show all Git branches
+    #   run: git branch -a
+
+    # - name: Build the Docker image
+    #   run: docker build . --file ${{ env.DOCKERFILE }} --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+
+
+
+
+
+
+
+
+
+
