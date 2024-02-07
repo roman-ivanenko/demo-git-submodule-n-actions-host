@@ -27,11 +27,11 @@ env:
   # IMAGE_NAME: ${{ github.repository }}
   IMAGE_NAME: demo-github-actions
   INPUT_TAG: ${{ github.event.inputs.tag }}
-  # DATE: $(date +%s)
-  DATE: $(date -u +"%F-%H%M%S")
   # IMAGE_TAG: ${INPUT_TAG:-"latest"}
-  IMAGE_TAG: ${INPUT_TAG:-${DATE}}
-  # IMAGE_TAG: ${INPUT_TAG:-$(date -u +"%F-%H%M%S")}
+  # DATE: $(date +%s)
+  # DATE: $(date -u +"%F-%H%M%S")
+  # IMAGE_TAG: ${INPUT_TAG:-${DATE}}
+  IMAGE_TAG: ${INPUT_TAG:-$(date -u +"%F-%H%M%S")}
   DOCKERFILE: Dockerfile
   
 permissions:
