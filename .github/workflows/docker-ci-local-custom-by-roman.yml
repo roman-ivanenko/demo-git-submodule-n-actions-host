@@ -1,17 +1,13 @@
 # Builds a Docker image and stores it in a local Docker cache.
 name: Docker Image Local Build
 
-# on:
-#   workflow_dispatch
 on:
   workflow_dispatch:
     inputs:
       tag:
         description: "Docker image TAG"
         # required: true
-        type: string
-        # default: $(date +%s)
-        # default: $(date -u +"%F-%H%M%S")
+        # type: string
         # default: $(date -u +"%F-%H%M%S-UTC")
         # default: 'latest'
 
@@ -32,10 +28,8 @@ env:
   # DATE: $(date +%s)
   # DATE: $(date -u +"%F-%H%M%S-UTC")
   # DATE: ${{ $(date -u +"%F-%H%M%S-UTC") }}
-  EMPTY: ""
-  DATE: ${EMPTY:-$(date -u +"%F-%H%M%S-UTC")}
-  IMAGE_TAG: ${INPUT_TAG:-$DATE}
-  # IMAGE_TAG: ${INPUT_TAG:-$(date -u +"%F-%H%M%S-UTC")}
+  # IMAGE_TAG: ${INPUT_TAG:-$DATE}
+  IMAGE_TAG: ${INPUT_TAG:-$(date -u +"%F-%H%M%S-UTC")}
   DOCKERFILE: Dockerfile
   
 permissions:
