@@ -32,9 +32,10 @@ env:
   # DATE: $(date +%s)
   # DATE: $(date -u +"%F-%H%M%S-UTC")
   # DATE: ${{ $(date -u +"%F-%H%M%S-UTC") }}
-  # DATE: ${'':-$(date -u +"%F-%H%M%S-UTC")}
-  # IMAGE_TAG: ${INPUT_TAG:-$DATE}
-  IMAGE_TAG: ${INPUT_TAG:-$(date -u +"%F-%H%M%S-UTC")}
+  EMPTY: ""
+  DATE: ${EMPTY:-$(date -u +"%F-%H%M%S-UTC")}
+  IMAGE_TAG: ${INPUT_TAG:-$DATE}
+  # IMAGE_TAG: ${INPUT_TAG:-$(date -u +"%F-%H%M%S-UTC")}
   DOCKERFILE: Dockerfile
   
 permissions:
