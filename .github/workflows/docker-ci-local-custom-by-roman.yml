@@ -1,5 +1,5 @@
-# Builds a Docker image and pushes it to the Docker Hub registry.
-name: Docker Image CI
+# Builds a Docker image and stores it in a local Docker cache.
+name: Docker Image Local Build
 
 # on:
 #   workflow_dispatch
