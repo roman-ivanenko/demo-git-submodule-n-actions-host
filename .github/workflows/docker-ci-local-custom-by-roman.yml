@@ -11,6 +11,7 @@ on:
         # required: true
         type: string
         # default: $(date +%s)
+        # default: $(date +"%F-%H%M%S%z")
         # default: 'latest'
 
 #   push:
@@ -27,7 +28,8 @@ env:
   IMAGE_NAME: demo-github-actions
   INPUT_TAG: ${{ github.event.inputs.tag }}
   # IMAGE_TAG: ${INPUT_TAG:-"latest"}
-  IMAGE_TAG: ${INPUT_TAG:-$(date +%s)}
+  # IMAGE_TAG: ${INPUT_TAG:-$(date +%s)}
+  IMAGE_TAG: ${INPUT_TAG:-$(date +"%F-%H%M%S%z")}
   DOCKERFILE: Dockerfile
   
 permissions:
