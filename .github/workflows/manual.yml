@@ -33,14 +33,15 @@ jobs:
 
     - name: Checkout current repository
       uses: actions/checkout@v4
-      with:
-        path: main
+      # To checkout repo side-by-side
+      # with:
+      #   path: main
     
     - name: Checkout "poc-on-tab-close" repo
       uses: actions/checkout@v4
       with:
         repository: roman-ivanenko/poc-on-tab-close
-        path: my-tools
+        path: poc-on-tab-close
 
     - name: Show working directory
       run: pwd && ls -la
