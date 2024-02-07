@@ -6,11 +6,6 @@ on:
     inputs:
       tag:
         description: "Docker image TAG"
-        # required: true
-        # type: string
-        # default: $(date -u +"%F-%H%M%S-UTC")
-        # default: 'latest'
-
 #   push:
 #     branches: [ "main" ]
 #   pull_request:
@@ -24,11 +19,6 @@ env:
   # IMAGE_NAME: ${{ github.repository }}
   IMAGE_NAME: demo-github-actions
   INPUT_TAG: ${{ github.event.inputs.tag }}
-  # IMAGE_TAG: ${INPUT_TAG:-"latest"}
-  # DATE: $(date +%s)
-  # DATE: $(date -u +"%F-%H%M%S-UTC")
-  # DATE: ${{ $(date -u +"%F-%H%M%S-UTC") }}
-  # IMAGE_TAG: ${INPUT_TAG:-$DATE}
   IMAGE_TAG: ${INPUT_TAG:-$(date -u +"%F-%H%M%S-UTC")}
   DOCKERFILE: Dockerfile
   
