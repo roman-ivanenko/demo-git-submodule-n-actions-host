@@ -30,9 +30,9 @@ env:
   INPUT_TAG: ${{ github.event.inputs.tag }}
   # IMAGE_TAG: ${INPUT_TAG:-"latest"}
   # DATE: $(date +%s)
-  # DATE: $(date -u +"%F-%H%M%S-UTC")
-  # IMAGE_TAG: ${INPUT_TAG:-${DATE}}
-  IMAGE_TAG: ${INPUT_TAG:-$(date -u +"%F-%H%M%S-UTC")}
+  DATE: $(date -u +"%F-%H%M%S-UTC")
+  IMAGE_TAG: ${INPUT_TAG:-$(echo "$DATE")}
+  # IMAGE_TAG: ${INPUT_TAG:-$(date -u +"%F-%H%M%S-UTC")}
   DOCKERFILE: Dockerfile
   
 permissions:
