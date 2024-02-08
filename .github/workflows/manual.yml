@@ -33,9 +33,9 @@ jobs:
 
     - name: Checkout current repository
       uses: actions/checkout@v4
-      # To checkout repo side-by-side
-      # with:
-      #   path: main
+      # To checkout repo to the folder "main-repo" (side-by-side)
+      with:
+        path: main-repo
     
     - name: Checkout "poc-on-tab-close" repo
       uses: actions/checkout@v4
@@ -44,7 +44,10 @@ jobs:
         path: poc-on-tab-close
 
     - name: Show working directory
-      run: pwd && ls -la
+      # For nested second repo
+      # run: pwd && ls -la
+      # For side-by-side repos
+      run: pwd && ls -la && cd ./main-repo && pwd && ls -la && cd ../poc-on-tab-close && pwd && ls -la
       
     - name: Show all Git branches
       run: git branch -a
