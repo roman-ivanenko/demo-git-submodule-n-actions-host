@@ -56,18 +56,19 @@ jobs:
     - name: Copy all PDF files in newly created directory
       run: |
         mkdir -pv ./main-repo/pdf
-        # cp -v ./poc-on-tab-close/*.pdf ./main-repo/pdf/
-        # cd ./main-repo
-        # git add .
-        # git status
-        # git commit -m 'Added PDF files from "poc-on-tab-close" repo.'
-        # git log -1
+        cp -v ./poc-on-tab-close/*.pdf ./main-repo/pdf/
+        cd ./main-repo
+        git add .
+        git status
+        git commit -m 'Added PDF files from "poc-on-tab-close" repo.'
+        git log -1
+        cd ..; pwd; ls -la
 
     - name: Show all Git branches
       # run: git branch -a
-       run: |
-         cd ./main-repo; pwd; git branch -a; 
-         cd ../poc-on-tab-close; pwd; git branch -a
+      run: |
+       cd ./main-repo; pwd; git branch -a; 
+       cd ../poc-on-tab-close; pwd; git branch -a
 
     - name: Show Git status
       # run: git status
