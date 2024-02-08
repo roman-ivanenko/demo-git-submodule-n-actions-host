@@ -60,7 +60,17 @@ jobs:
         cd ./main-repo
         git add .
         git status
-        git commit -m 'Added PDF files from "poc-on-tab-close" repo.'
+        # git commit -m 'Added PDF files from "poc-on-tab-close" repo.'
+        # Error: Process completed with exit code 128.
+        # Author identity unknown
+        # *** Please tell me who you are.
+        # Run
+        #   git config --global user.email "you@example.com"
+        #   git config --global user.name "Your Name"
+        # to set your account's default identity.
+        # Omit --global to set the identity only in this repository.
+        # fatal: unable to auto-detect email address (got 'runner@fv-az887-850.(none)')
+        # Error: Process completed with exit code 128.
         git log -1
         cd ..; pwd; ls -la
 
