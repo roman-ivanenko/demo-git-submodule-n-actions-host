@@ -51,17 +51,17 @@ jobs:
         pwd; ls -la
         cd ./main-repo; pwd; ls -la
         cd ../poc-on-tab-close; pwd; ls -la
-        cd ..
+        cd ..; pwd; ls -la
 
     - name: Copy all PDF files in newly created directory
       run: |
         mkdir -pv ./main-repo/pdf
-        cp -v ./poc-on-tab-close/*.pdf ./main-repo/pdf/
-        cd ./main-repo
-        git add .
-        git status
-        git commit -m 'Added PDF files from "poc-on-tab-close" repo.'
-        git log -1
+        # cp -v ./poc-on-tab-close/*.pdf ./main-repo/pdf/
+        # cd ./main-repo
+        # git add .
+        # git status
+        # git commit -m 'Added PDF files from "poc-on-tab-close" repo.'
+        # git log -1
 
     - name: Show all Git branches
       # run: git branch -a
