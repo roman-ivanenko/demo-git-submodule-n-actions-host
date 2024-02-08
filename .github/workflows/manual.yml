@@ -47,7 +47,10 @@ jobs:
       # For nested second repo
       # run: pwd && ls -la
       # For side-by-side repos
-      run: pwd && ls -la && cd ./main-repo && pwd && ls -la && cd ../poc-on-tab-close && pwd && ls -la
+      run: |
+        pwd && ls -la
+        cd ./main-repo; pwd; ls -la
+        cd ../poc-on-tab-close; pwd; ls -la
       
     - name: Show all Git branches
       # run: git branch -a
