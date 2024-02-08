@@ -72,15 +72,15 @@ jobs:
 
     - name: Show Git status
       # run: git status
-       run: |
-         cd ./main-repo; pwd; git status; 
-         cd ../poc-on-tab-close; pwd; git status
+      run: |
+       cd ./main-repo; pwd; git status; 
+       cd ../poc-on-tab-close; pwd; git status
 
     - name: Show Git log -3
       # run: git log -3
-       run: |
-         cd ./main-repo; pwd; git log -3; 
-         cd ../poc-on-tab-close; pwd; git log -3
+      run: |
+       cd ./main-repo; pwd; git log -3; 
+       cd ../poc-on-tab-close; pwd; git log -3
       
     - name: Docker image list
       run: docker image ls
